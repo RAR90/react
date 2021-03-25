@@ -1,0 +1,83 @@
+@import 'assets/css/fonts.css';
+@import 'assets/css/bootstrap.min.css';
+@import 'assets/css/style.css';
+@import 'assets/css/demo.css';
+
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css';
+
+.fa {
+  padding-bottom: 2px !important;
+}
+
+.navbar-brand {
+  margin-top: 6px;
+}
+
+.system-logo {
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  background-color: #FFF;
+}
+
+.system-logo a img {
+  float: left;
+  margin-left: 5%;
+  width: 90%;
+  max-width: 100%;
+  padding: 35px 25px;
+}
+
+.sidebar .nav-item i {
+  font-size: 18px;
+}
+
+.sidebar .nav-item.active i {
+  color: #f7631f !important;
+}
+
+.btn-default:hover {
+  border-color: #f7631f !important;
+  background-color: #f7631f !important;
+  color: #FFF !important;
+  cursor: pointer;
+}
+
+#new-report .modal-body {
+  /* background-color: rgb(241, 241, 241); */
+}
+
+.form-group label {
+  font-size: 14px !important;
+  font-weight: bolder;
+}
+
+.table input,
+.table select,
+.table text,
+.card-body input,
+.card-body select,
+.card-body text,
+.modal-body input,
+.modal-body select,
+.modal-body text {
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.15);
+  height: calc(1.8125rem + 2px);
+  color: #495057;
+  background-color: #fff;
+  padding: .25rem .5rem!important;
+  font-size: .875rem!important;
+  line-height: 1.5;
+  border-radius: .2rem;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+}
+
+.card-body input {
+  padding: 18px .5rem !important;
+}
+
+
+.offf {
+  opacity: .4 !important;
+}
