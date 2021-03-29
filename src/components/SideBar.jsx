@@ -33,6 +33,12 @@ class SideBar extends React.Component {
               </li>
               <li className={this.active('/')}>
                 <a href="/">
+                  <i class="fa fa-home"></i>
+                  <p>Inicial</p>
+                </a>
+              </li>
+              <li className={this.active('/Relatorios')}>
+                <a href="/relatorios">
                   <i className="fa fa-file-pdf-o"></i>
                   <p>Relatórios</p>
                 </a>
