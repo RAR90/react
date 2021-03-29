@@ -9,3 +9,23 @@
 .modal-body textarea {
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.15);
 }
+
+.app-brand {
+  font-size: 22px;
+  text-align: left;
+  margin: 0 auto;
+  line-height: 1;
+  color: tomato;
+  text-shadow: 1px 1px 2px rgba(117, 117, 117, 0.3);
+  font-weight: bolder;
+}
+.app-brand small {
+  font-size: 16px;
+  text-align: left;
+  color: black;
+  text-shadow: none;
+}
+
+.sidebar-submenu .active a {
+  color: rgb(255, 61, 13) !important;
+}

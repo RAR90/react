@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import MainMenu from './components/MainMenu'
 import SideBar from './components/SideBar'
 
@@ -8,83 +7,9 @@ import './App.css'
 class App extends React.Component {
   constructor() {
     super()
-
-    this.handleRecipient = this.handleRecipient.bind(this)
-    this.handleSubject = this.handleSubject.bind(this)
-    this.handleSender = this.handleSender.bind(this)
-    this.handleMessage = this.handleMessage.bind(this)
-    this.handleClick = this.handleClick.bind(this)
-
     this.state = {
-      persons: [],
-      recipient: '',
-      subject: '',
-      sender: '',
       message: ''
     }
-  }
-
-  componentDidMount() {
-
-    const headers = {
-      'Token': '&*IUHK!@#$%&*45()ihjkhiuiuiIUY6JE45H@*&*&*764587yiu5jhkj',
-      'Content-Type': 'application/json'
-    }
-
-    axios.get('http://teclabs.com.br/html/microservices/users.php', { headers })
-    .then(res => {
-      const persons = res.data;
-      this.setState({ persons })
-    })
-
-    document.getElementById('selectUsers').addEventListener('change', function() {
-      this.recipient = this.value
-    });
-  }
-
-  handleRecipient(event) {
-    this.setState({recipient: event.target.value})
-    console.log(this.state.recipient)
-  }
-
-  handleSubject(event) {
-    this.setState({subject: event.target.value})
-    console.log(this.state.subject)
-  }
-
-  handleSender(event) {
-    this.setState({sender: event.target.value})
-    console.log(this.state.sender)
-  }
-
-  handleMessage(event) {
-    this.setState({message: event.target.value})
-    console.log(this.state.message)
-  }
-
-  handleClick() {
-
-    const headers = {
-      'Token': '&*IUHK!@#$%&*45()ihjkhiuiuiIUY6JE45H@*&*&*764587yiu5jhkj',
-      'Content-Type': 'application/json'
-    }
-
-    const data = {
-      RECIPIENT:this.state.recipient,
-      SUBJECT:this.state.subject,
-      SENDER:this.state.sender,
-      MESSAGE:this.state.message
-    };
-
-    axios.post('http://teclabs.com.br/html/microservices/email.php', data, { headers })
-      .then(res => {
-        alert(res.data)
-    })
-
-    console.log(this.state.recipient)
-    console.log(this.state.subject)
-    console.log(this.state.sender)
-    console.log(this.state.message)
   }
 
   render() {
@@ -101,67 +26,229 @@ class App extends React.Component {
           <div className="main-panel">
             <div className="panel-hedding">
 
-              <div className="row mb-4">
-                <div className="col-md-12">
-                  <h1>E-Mail Microservice Example</h1>
+              <div class="row">
+                <div class="col-md-9 mb-3">
+                  <h1>ATS Rules</h1>
+                  <p>Laborum quos unde repellendus esse voluptates consequuntur quis ab ratione pariatur praesentium cumque ipsa. Tempore, sed ex.</p>
+                </div>
+                <div class="col-md-3">
+                  <div class="add-new">
+                    <a class="btn btn-primary" href="#!" data-toggle="modal" data-target="#exampleModal"> <i class="feather icon-plus"></i> Add ATS Rule</a>
+                  </div>
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-lg-6">
-                  <div className="card">
-                    <div className="card-title">
-                      <div className="card-title-left">
-                        <h4 className="card-title-text">This feature illustrates how a React application interacts with a microservice-based backend</h4>
+
+                <div className="col-md-7">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table id="table-export" class="table table-striped table-bordered display nowrap">
+                          <thead>
+                            <tr>
+                              <th>Percentual %</th>
+                              <th>Critério 1</th>
+                              <th>Critério 2</th>
+                              <th>Descrição</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>0.00</td>
+                              <td>0</td>
+                              <td>5</td>
+                              <td>Menor que 5 anos</td>
+                            </tr>
+                            <tr>
+                              <td>1.00</td>
+                              <td>1</td>
+                              <td>2</td>
+                              <td>De 5 a 10 anos</td>
+                            </tr>
+                            <tr>
+                              <td>2.50</td>
+                              <td>2</td>
+                              <td>3</td>
+                              <td>De 10 a 15 anos</td>
+                            </tr>
+                            <tr>
+                              <td>3.00</td>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>De 15 a 20 anos</td>
+                            </tr>
+                            <tr>
+                              <td>3.00</td>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>De 20 a 30 anos</td>
+                            </tr>
+                            <tr>
+                              <td>3.00</td>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>De 5 a 10 anos</td>
+                            </tr>
+                            <tr>
+                              <td>3.00</td>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>Menor que 5 anos</td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <th>Percentual %</th>
+                              <th>Critério 1</th>
+                              <th>Critério 2</th>
+                              <th>Descrição</th>
+                            </tr>
+                          </tfoot>
+                        </table>
                       </div>
-                    </div>
-                    <div className="card-body">
-
-                      <div className="row">
-
-                        <div className="col-12 mb-3">
-                          <label htmlFor="users">Users</label>
-                          <select className="form-control" id="selectUsers" value={this.state.value} onChange={this.handleRecipient}>
-                            <option defaultValue="selecione">Selecione um Usuário</option>
-                            <optgroup label="Usuários">
-                              {
-                                this.state.persons.map(person =>
-                                  <option key={person.id} value={person.email}>{person.name}</option>
-                                )
-                              }
-                            </optgroup>
-                          </select>
-                        </div>
-
-                        <div className="col-12 mb-3">
-                          <label htmlFor="subject">Subject</label>
-                          <input type="text" className="form-control" placeholder="Subject" value={this.state.value} onChange={this.handleSubject} required/>
-                        </div>
-
-                        <div className="col-12 mb-3">
-                          <label htmlFor="subject">Sender</label>
-                          <input type="email" id="subject" className="form-control" placeholder="Your e-mail" value={this.state.value} onChange={this.handleSender} required/>
-                        </div>
-
-                        <div className="col-12 mb-3">
-                          <label htmlFor="message">Message</label>
-                          <textarea id="message" className="form-control" rows="10" value={this.state.value} onChange={this.handleMessage} required></textarea>
-                        </div>
-
-                        <div className="col-12 mb-3 text-center">
-                          <button className="btn btn-primary pt-1">Enviar <i className="fa fa-envelope-o" onClick={this.handleClick}></i></button>
-                        </div>
-
-                      </div>
-
                     </div>
                   </div>
                 </div>
+
+                <div class="col-md-5">
+                  <div class="card">
+                    <div class="card-title">
+                      <div class="card-title-left">
+                        <h4 class="card-title-text">History</h4>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="support-ticket">
+
+                      <a class="ticket-item" href="#!">
+                          <div class="avatar avatar-xl bg-soft-primary">
+                            <span class="avatar-name text-primary">O2C</span>
+                          </div>
+                          <div class="ticket-info">
+                            <span class="text-light ticket-customer">BRMacelBr</span>
+                            <span class="badge badge-overlay-info">Uptaded</span>
+                            <h5 class="title mt-2 w-100">ATS Rule "Menor que 5 anos"</h5>
+                          </div>
+                          <div class="ticket-time text-right">
+                            <span><i class="la la-calendar-o"></i> 2 hours ago</span>
+                          </div>
+                        </a>
+
+                        <a class="ticket-item" href="#!">
+                          <div class="avatar avatar-xl bg-soft-primary">
+                            <span class="avatar-name text-primary">O2C</span>
+                          </div>
+                          <div class="ticket-info">
+                            <span class="text-light ticket-customer">BRMacelBr</span>
+                            <span class="badge badge-overlay-danger">Deleted</span>
+                            <h5 class="title mt-2">ATS Rule "44"</h5>
+                          </div>
+                          <div class="ticket-time text-right">
+                            <span><i class="la la-calendar-o"></i> 2 hours ago</span>
+                          </div>
+                        </a>
+                        <a class="ticket-item" href="#!">
+                          <div class="avatar avatar-xl bg-soft-primary">
+                            <span class="avatar-name text-primary">O2C</span>
+                          </div>
+                          <div class="ticket-info">
+                            <span class="text-light ticket-customer">BRMacelBr</span>
+                            <span class="badge badge-overlay-danger">Deleted</span>
+                            <h5 class="title mt-2">ATS Rule "44"</h5>
+                          </div>
+                          <div class="ticket-time text-right">
+                            <span><i class="la la-calendar-o"></i> 2 hours ago</span>
+                          </div>
+                        </a>
+                        <a class="ticket-item" href="#!">
+                          <div class="avatar avatar-xl bg-soft-primary">
+                            <span class="avatar-name text-primary">O2C</span>
+                          </div>
+                          <div class="ticket-info">
+                            <span class="text-light ticket-customer">BRMacelBr</span>
+                            <span class="badge badge-overlay-danger">Deleted</span>
+                            <h5 class="title mt-2">ATS Rule "44"</h5>
+                          </div>
+                          <div class="ticket-time text-right">
+                            <span><i class="la la-calendar-o"></i> 2 hours ago</span>
+                          </div>
+                        </a>
+                        <a class="ticket-item" href="#!">
+                          <div class="avatar avatar-xl bg-soft-primary">
+                            <span class="avatar-name text-primary">O2C</span>
+                          </div>
+                          <div class="ticket-info">
+                            <span class="text-light ticket-customer">BRMacelBr</span>
+                            <span class="badge badge-overlay-danger">Deleted</span>
+                            <h5 class="title mt-2">ATS Rule "44"</h5>
+                          </div>
+                          <div class="ticket-time text-right">
+                            <span><i class="la la-calendar-o"></i> 2 hours ago</span>
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
             </div>
           </div>
 
+        </div>
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+
+
+              <div className="col-12">
+                <div className="form-group">
+                  <label>Percentual %</label>
+                  <input type="text" className="form-control"/>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="form-group">
+                  <label>Critério 1</label>
+                  <input type="text" className="form-control"/>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="form-group">
+                  <label>Critério 2</label>
+                  <input type="text" className="form-control"/>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="form-group">
+                  <label>Descrição</label>
+                  <textarea className="form-control"></textarea>
+                </div>
+              </div>
+
+
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

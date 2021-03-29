@@ -21,15 +21,54 @@ class SideBar extends React.Component {
 
       <div className="sidebar-panel nicescrollbar sidebar-panel-light">
         <ul className="sidebar-menu">
-          <li className="sidebar-header"> Microservices </li>
-          <li>
+          <li className="sidebar-header pt-5">
+            <h1 className="app-brand">
+              Data Processing <br/>
+              <small>v2.0</small>
+            </h1>
+          </li>
+          <li className="sidebar-header">Tools and Features</li>
+          <li class="active">
             <a href="#collapse">
-              <i className="la la-envelope"></i> <span>Email </span> <i className="la la-angle-right down-arrow"></i>
+              <i className="la la-cubes"></i><span>Main Tools</span> <i className="la la-angle-right down-arrow"></i>
             </a>
             <ul className="sidebar-submenu">
-              <li><a href="/"><span> Send Email </span> </a></li>
+              <li class="active"><a href="/"><span>ATS Rules</span></a></li>
+              <li><a href="/"><span>Control Panel</span></a></li>
+              <li><a href="/"><span>Credit Note Validation</span></a></li>
+              <li><a href="/"><span>INSS RulesMargem Consignavel</span></a></li>
+              <li><a href="/"><span>PO Creation</span></a></li>
             </ul>
           </li>
+          <li>
+            <a href="#collapse">
+              <i className="la la-book"></i><span>Catalog</span> <i className="la la-angle-right down-arrow"></i>
+            </a>
+            <ul className="sidebar-submenu">
+              <li><a href="/"><span>Creation</span></a></li>
+              <li><a href="/"><span>Report</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#collapse">
+              <i className="la la-file-pdf-o"></i><span>Contracts</span> <i className="la la-angle-right down-arrow"></i>
+            </a>
+            <ul className="sidebar-submenu">
+              <li><a href="/"><span>Creation</span></a></li>
+              <li><a href="/"><span>Report</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#collapse">
+              <i className="la la-cart-plus"></i><span>E Commerce Freights Dolce Gusto</span> <i className="la la-angle-right down-arrow"></i>
+            </a>
+            <ul className="sidebar-submenu">
+              <li><a href="/"><span>Crossing Bases</span></a></li>
+              <li><a href="/"><span>General Rules</span></a></li>
+              <li><a href="/"><span>Import Bases</span></a></li>
+            </ul>
+          </li>
+
           {/*
           <li className="sidebar-header"> User interface </li>
             <li>
