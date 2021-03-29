@@ -205,42 +205,37 @@ class App extends React.Component {
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Insert New Rule</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
 
-
-
-              <div className="col-12">
-                <div className="form-group">
-                  <label>Percentual %</label>
-                  <input type="text" className="form-control"/>
+                <div className="col-12">
+                  <div className="form-group">
+                    <label>Percentual %</label>
+                    <input type="text" className="form-control"/>
+                  </div>
                 </div>
-              </div>
-              <div className="col-12">
-                <div className="form-group">
-                  <label>Critério 1</label>
-                  <input type="text" className="form-control"/>
+                <div className="col-12">
+                  <div className="form-group">
+                    <label>Critério 1</label>
+                    <input type="text" className="form-control"/>
+                  </div>
                 </div>
-              </div>
-              <div className="col-12">
-                <div className="form-group">
-                  <label>Critério 2</label>
-                  <input type="text" className="form-control"/>
+                <div className="col-12">
+                  <div className="form-group">
+                    <label>Critério 2</label>
+                    <input type="text" className="form-control"/>
+                  </div>
                 </div>
-              </div>
-              <div className="col-12">
-                <div className="form-group">
-                  <label>Descrição</label>
-                  <textarea className="form-control"></textarea>
+                <div className="col-12">
+                  <div className="form-group">
+                    <label>Descrição</label>
+                    <textarea className="form-control"></textarea>
+                  </div>
                 </div>
-              </div>
-
-
-
 
               </div>
               <div class="modal-footer">
